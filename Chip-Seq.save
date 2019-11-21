@@ -1,0 +1,7 @@
+ #!/bin/bash
+mkdir SraTools
+cd SraTools
+wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.1-1/sratoolkit.2.9.1-1-ubuntu64.tar.gz
+tar -xzvf sratoolkit.2.9.1-1-ubuntu64.tar.gz
+export PATH=$PWD/sratoolkit.2.9.1-1-centos_linux64/bin/:${PATH}
+mkdir sraDir
