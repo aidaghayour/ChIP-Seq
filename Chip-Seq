@@ -1,7 +1,40 @@
 #!/bin/bash
+
+
+################## Installing SRATools for Ubuntu64, adding /bin to the Path
 mkdir SraTools
 cd SraTools
 wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.9.1-1/sratoolkit.2.9.1-1-ubuntu64.tar.gz
 tar -xzvf sratoolkit.2.9.1-1-ubuntu64.tar.gz
 export PATH=$PWD/sratoolkit.2.9.1-1-centos_linux64/bin/:${PATH}
+
+
+cd ..
 mkdir sraDir
+vdb-config -i
+prefetch SRR7555666
+prefetch SRR7555667
+
+
+
+########################## Converting all sra files in sraDir fol
+mkdir fastq
+for sraFile in sraDir/sra/*.sra; do
+ echo "Extracting fastq from "${sraFile}
+ fastq-dump \
+    --origfmt \
+    --gzip \
+    --outdir fastq \
+    ${sraFile}
+done
+########################## Downloading FASTQC toolkit into FASTQC
+mkdir FASTQC
+cd FASTQC
+wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.7.zip
+unzip fastqc_v0.11.7.zip
+chmod +x FastQC/fastqc
+export PATH=$PWD/FastQC:${PATH}
+############################  Running Quality check using Fastcq function and 20 cores
+cd ..
+mkdir fastqcfiles
+fastqc -o fastqcfiles/ fastq/*fastq.gz -t 20
