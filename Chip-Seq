@@ -60,5 +60,9 @@ wget https://github.com/alexdobin/STAR/archive/2.7.3a.tar.gz
 tar -xzf 2.7.3a.tar.gz
 cd STAR-2.7.3a/bin/Linux_x86_64 ##For ubuntu
 chmod +x ./STAR #making it excutable
-export PATH=$PWM:${PATH} 
-
+PATH=../Linux_x86_64/:$PATH
+########################## Creating gene indeces with STAR
+cd ..
+mkdir STARindex/GenomeDir
+STAR --runThreadN 20 --runMode genomeGenerate --genomeFastaFiles ../referenceData/fasta/Homo_sapiens.GRCh38.dna_rm.primary_assembly.fa --sjdbGTFfile ../referenceData/annotations/Homo_sapiens.GRCh38.98.gtf --sjdbOverhang 99
+######
