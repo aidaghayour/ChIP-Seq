@@ -52,4 +52,13 @@ mkdir annotations
 cd annotations
 wget ftp://ftp.ensembl.org/pub/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh38.98.gtf.gz
 gunzip Homo_sapiens.GRCh38.98.gtf.gz
-##########################
+########################## Download and intall STAR
+cd ../..
+mkdir STAR
+cd STAR
+wget https://github.com/alexdobin/STAR/archive/2.7.3a.tar.gz
+tar -xzf 2.7.3a.tar.gz
+cd STAR-2.7.3a/bin/Linux_x86_64 ##For ubuntu
+chmod +x ./STAR #making it excutable
+export PATH=$PWM:${PATH} 
+
