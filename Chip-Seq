@@ -65,4 +65,7 @@ PATH=../Linux_x86_64/:$PATH
 cd ..
 mkdir STARindex/GenomeDir
 STAR --runThreadN 20 --runMode genomeGenerate --genomeFastaFiles ../referenceData/fasta/Homo_sapiens.GRCh38.dna_rm.primary_assembly.fa --sjdbGTFfile ../referenceData/annotations/Homo_sapiens.GRCh38.98.gtf --sjdbOverhang 99
-######
+########################## Mapping of Fastq file
+mkdir STARmap
+STAR --runThreadN 10 --genomeDir ./STARindex/GenomeDir/ --readFilesIn ./fastq/SRR577766.fastq --outFileNamePrefix ./STARmap/
+
