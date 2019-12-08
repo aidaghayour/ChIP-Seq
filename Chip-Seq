@@ -38,3 +38,18 @@ export PATH=$PWD/FastQC:${PATH}
 cd ..
 mkdir fastqcfiles
 fastqc -o fastqcfiles/ fastq/*fastq.gz -t 20
+############################ REference data downlod from ensemble
+cd ..
+mkdir referencedata/fasta
+cd referencedata/fasta
+wget ftp://ftp.ensembl.org/pub/release-98/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna_rm.primary_assembly.fa.gz
+gunzip Homo_sapiens.GRCh38.dna_rm.primary_assembly.fa.gz
+
+########################### GFT file of the reference data
+
+cd ..
+mkdir annotations
+cd annotations
+wget ftp://ftp.ensembl.org/pub/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh38.98.gtf.gz
+gunzip Homo_sapiens.GRCh38.98.gtf.gz
+##########################
