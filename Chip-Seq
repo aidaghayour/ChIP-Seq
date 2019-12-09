@@ -69,3 +69,7 @@ STAR --runThreadN 20 --runMode genomeGenerate --genomeFastaFiles ../referenceDat
 mkdir STARmap
 STAR --runThreadN 10 --genomeDir ./STARindex/GenomeDir/ --readFilesIn ./fastq/SRR577766.fastq --outFileNamePrefix ./STARmap/
 
+######################### Mapping of fastq file, with a BAM as input and prohibited splices
+mkdir STARmap/splicesbloacked
+STAR --runThreadN 10 --genomeDir ./STARindex/GenomeDir/ --readFilesIn ./fastq/SRR577766.fastq --outFileNamePrefix ./STARmap/spliceblocked/ --outSAMtype BAM SortedByCoordinate --alignIntronMax 1 --alignMatesGapMax MaxInsertSize-2*ReadLength
+
