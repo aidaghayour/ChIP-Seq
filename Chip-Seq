@@ -73,3 +73,14 @@ STAR --runThreadN 10 --genomeDir ./STARindex/GenomeDir/ --readFilesIn ./fastq/SR
 mkdir STARmap/splicesbloacked
 STAR --runThreadN 10 --genomeDir ./STARindex/GenomeDir/ --readFilesIn ./fastq/SRR577766.fastq --outFileNamePrefix ./STARmap/spliceblocked/ --outSAMtype BAM SortedByCoordinate --alignIntronMax 1 --alignMatesGapMax MaxInsertSize-2*ReadLength
 
+######################## MACS installation
+mkdir MACS2
+cd MACS2
+python3 -m venv MyPythonEnv/
+source ./MyPythonEnv/bin/active
+
+./MyPythonEnv/bin/pip install numpy
+./MyPythonEnv/bin/pip install https://mirrors.aliyun.com/pypi/packages/b7/49/f$
+
+./MyPythonEnv/bin/macs2 --version
+
