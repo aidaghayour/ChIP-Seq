@@ -1,3 +1,6 @@
+
+#!/bin/bash
+
 git clone --recursive https://github.com/vgteam/vg.git
 cd vg
 make get-deps
