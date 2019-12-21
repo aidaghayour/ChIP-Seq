@@ -12,6 +12,7 @@ sudo apt-get install build-essential git cmake pkg-config libncurses-dev libbz2-
 
 
 ################################# make sure you have installed Cmake installed which links to openssl's curl libraries. This can be troublesome but this would work:
+#https://leimao.github.io/blog/CMake-SSL-Support/
 #cd /tmp
 #sudo apt-get install libcurl4-openssl-dev
 #wget https://github.com/Kitware/CMake/releases/download/v3.14.4/cmake-3.14.4.tar.gz
