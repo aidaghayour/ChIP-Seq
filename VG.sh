@@ -11,5 +11,6 @@ sudo apt-get install build-essential git cmake pkg-config libncurses-dev libbz2-
                      libffi-dev libcairo-dev
 
 
-################################# make file
+################################# make sure you have installed Cmake from here: https://github.com/Kitware/CMake/releases/download/v3.16.2/cmake-3.16.2.tar.gz
+
 ./source_me.sh && make
