@@ -22,4 +22,6 @@ sudo apt-get install build-essential git cmake pkg-config libncurses-dev libbz2-
 #make -j16 # Use `j` argument to accelerate the process
 #sudo make install
 
+
+#add the folder to the path: export PATH=$PATH:/tmp/cmake-3.14.4/
 ./source_me.sh && make
