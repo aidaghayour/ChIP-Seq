@@ -40,5 +40,7 @@ cd ./vg/test
 #Make a dot format for Graphiz!
 vg view -d x.vg > x.dot
 
+#make the .svg file without pipelining
+dot -Tsvg x.dot -o manualx.svg
 
 
