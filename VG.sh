@@ -32,6 +32,10 @@ cd ./vg/test
 #run the vg in bin and construct a tiny Pangenome graph, convert it to dot format and make a svg file of its visualization
 ./bin/vg construct -v ./tiny/tiny.vcf.gz -r ./tiny/tiny.fa \ | vg view -d - \ | dot -Tsvg -o x.svg
 
-
+#Install tabix to index vcf file before making the graph!
+#http://genometoolbox.blogspot.com/2013/11/installing-tabix-on-unix.html
 # work with small datasets and make the graph of the vg format
 ./bin/vg construct -r small/x.fa -v small/x.vcf.gz > x.vg
+
+
+
