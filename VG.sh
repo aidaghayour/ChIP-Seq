@@ -37,5 +37,8 @@ cd ./vg/test
 # work with small datasets and make the graph of the vg format
 ./bin/vg construct -r small/x.fa -v small/x.vcf.gz > x.vg
 
+#Make a dot format for Graphiz!
+vg view -d x.vg > x.dot
+
 
 
