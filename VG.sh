@@ -30,17 +30,23 @@ sudo apt-get install build-essential git cmake pkg-config libncurses-dev libbz2-
 cd ./vg/test
 
 #run the vg in bin and construct a tiny Pangenome graph, convert it to dot format and make a svg file of its visualization
-./bin/vg construct -v ./tiny/tiny.vcf.gz -r ./tiny/tiny.fa \ | vg view -d - \ | dot -Tsvg -o x.svg
+../bin/vg construct -v ./tiny/tiny.vcf.gz -r ./tiny/tiny.fa \ | vg view -d - \ | dot -Tsvg -o x.svg
 
 #Install tabix to index vcf file before making the graph!
 #http://genometoolbox.blogspot.com/2013/11/installing-tabix-on-unix.html
 # work with small datasets and make the graph of the vg format
-./bin/vg construct -r small/x.fa -v small/x.vcf.gz > x.vg
+../bin/vg construct -r small/x.fa -v small/x.vcf.gz > x.vg
 
 #Make a dot format for Graphiz!
-vg view -d x.vg > x.dot
+../bin/vg view -d x.vg > x.dot
 
 #make the .svg file without pipelining
 dot -Tsvg x.dot -o manualx.svg
 
+#make the svg with paths
+../bin/vg view -dp x1.vg > x-paths.dot
+dot -Tsvg x-paths.dot -o x-paths.svg
+
+../bin/vg view -dpn x1.vg > x-paths-numbered.dot
+dot -Tsvg x-paths-numbered.dot -o x-paths-numbered.svg
 
