@@ -25,3 +25,13 @@ sudo apt-get install build-essential git cmake pkg-config libncurses-dev libbz2-
 
 #add the folder to the path: export PATH=$PATH:/tmp/cmake-3.14.4/
 ./source_me.sh && make
+
+#go to vg/test directory
+cd ./vg/test
+
+#run the vg in bin and construct a tiny Pangenome graph, convert it to dot format and make a svg file of its visualization
+./bin/vg construct -v ./tiny/tiny.vcf.gz -r ./tiny/tiny.fa \ | vg view -d - \ | dot -Tsvg -o x.svg
+
+
+# work with small datasets and make the graph of the vg format
+./bin/vg construct -r small/x.fa -v small/x.vcf.gz > x.vg
